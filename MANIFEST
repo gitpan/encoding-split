@@ -3,11 +3,5 @@ Makefile.PL
 MANIFEST
 README
 t/encoding-split.t
-t/encoding-source.t
-t/encoding-source-notstdio.t
-t/encoding-stdio.t
-t/encoding-stdio-notsource.t
 lib/encoding/split.pm
-lib/encoding/source.pm
-lib/encoding/stdio.pm
 META.yml                                 Module meta-data (added by MakeMaker)

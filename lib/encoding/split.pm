@@ -1,49 +1,27 @@
 package encoding::split;
-$VERSION = '0.01';
-use Carp qw(croak);
-croak "Use encoding, encoding::source, or encoding::stdio";
+our $VERSION = '0.02';
+
 1;
 __END__
-
 =head1 NAME
 
-encoding::split - Like encoding, but affecting only STDIO, or only source.
-
-=head1 SYNOPSIS
-
-    use encoding::source "latin-1";
-    use encoding::stdio  ":locale";
+encoding::split - Metapackage (bundle) for automated upgrades
 
 =head1 DESCRIPTION
 
-The C<encoding> pragma assumes that the development environment and the
-environment in which the program will run, use the same character encoding. Typically, they will be different, but unfortunately, it's too late to change things now.
+In June 2007, encoding::source was removed from encoding-split, and the package
+was renamed to encoding-stdio.
 
-It's not too late to remedy it in another way. C<encoding::split> provides two
-alternative pragmas, that function like C<encoding>, but affect only one
-aspect.
+This module depends on RGARCIA's encoding-source and JUERD's encoding-stdio, so
+that machines upgrading from encoding-split 0.01 will install both new modules.
 
-=head2 Modules
+If you find this module, encoding::split 0.02, on your computer, you may safely
+remove it. It is no longer needed after its initial installation.
 
-=head3 encoding::source
+=head1 EXPIRY
 
-Only installs the source filter to interpret your source code under a different
-character set, while leaving STDOUT and STDIN intact.
-
-=head3 encoding::stdio
-
-Only installs the PerlIO C<:encoding> layers on STDOUT and STDIN, without
-installing a source filter.
-
-=head1 RELIABILITY
-
-These modules are a proof of concept. It should work, but may not be compatible
-with Perl 5.9's new I<lexical> C<encoding> pragma. 
-
-=head1 AUTHOR
-
-Juerd Waalboer <juerd@cpan.org>
+This module will remain on CPAN at least one year, but not much longer.
 
 =head1 SEE ALSO
 
-L<encoding>
+L<encoding::source>, L<encoding::split>
